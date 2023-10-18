@@ -7,8 +7,6 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField] public AudioClip GunShoot;
 
-    private FirstPersonController fpsController;
-
     private void Start()
     {
         Gun?.OnInit();
