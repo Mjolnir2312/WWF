@@ -33,7 +33,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void OnDied()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        PoolManager.Despawn(gameObject);
     }
 }
 
