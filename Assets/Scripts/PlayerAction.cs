@@ -21,7 +21,7 @@ public class PlayerAction : MonoBehaviour
         }
         else
         {
-            Gun.StopShooting();
+            Gun?.StopShooting();
         }
     }
 }

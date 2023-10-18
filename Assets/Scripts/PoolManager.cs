@@ -63,6 +63,7 @@ public static class PoolManager
     {
         Queue<GameObject> pools = new Queue<GameObject>();
         List<GameObject> activeObjs = new List<GameObject>();
+
         Transform parent;
         public GameObject prefab;
 
@@ -75,6 +76,7 @@ public static class PoolManager
                 GameObject obj = GameObject.Instantiate(prefab, parent);
                 poolParents.Add(obj, this);
                 pools.Enqueue(obj);
+
                 obj.SetActive(false);
             }
         }
@@ -95,6 +97,7 @@ public static class PoolManager
             }
 
             obj.transform.SetPositionAndRotation(position, rotation);
+
             obj.SetActive(true);
 
             activeObjs.Add(obj);
@@ -106,8 +109,8 @@ public static class PoolManager
         {
             activeObjs.Remove(obj);
             pools.Enqueue(obj);
+
             obj.SetActive(false);
-            //Debug.Log("Hit");
         }
 
         public void Collect()

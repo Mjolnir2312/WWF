@@ -44,6 +44,7 @@ public class Bullet : MonoBehaviour
         if (Physics.Raycast(transform.position, tf.forward, out hit, 0.5f, Mask))
         {
             HandleCollision(hit.collider);
+            Debug.Log("-------Hit--------");
         }
         else
         {
